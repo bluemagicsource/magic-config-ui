@@ -13,18 +13,23 @@ public class PropertyTag {
 	public String getTagValue() {
 		return tagValue;
 	}
+	
 	public void setTagValue(String tagValue) {
 		this.tagValue = tagValue;
 	}
+	
 	public String getBackgroundColor() {
 		return backgroundColor;
 	}
+	
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
+	
 	public String getTextColor() {
 		return textColor;
 	}
+	
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
 	}

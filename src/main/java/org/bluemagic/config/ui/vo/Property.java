@@ -1,5 +1,6 @@
 package org.bluemagic.config.ui.vo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,18 +17,27 @@ public class Property {
 	public String getBaseName() {
 		return baseName;
 	}
+	
 	public void setBaseName(String baseName) {
 		this.baseName = baseName;
 	}
+	
 	public String getValue() {
 		return value;
 	}
+	
 	public void setValue(String value) {
 		this.value = value;
 	}
+	
 	public List<PropertyTag> getTags() {
+		if (tags == null) {
+			return new ArrayList<PropertyTag>();
+		}
+		
 		return tags;
 	}
+	
 	public void setTags(List<PropertyTag> tags) {
 		this.tags = tags;
 	}

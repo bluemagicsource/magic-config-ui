@@ -64,7 +64,8 @@ public class PropertyController {
 	}
 	
 	/**
-	 * Handles all requests to edit a particular property.
+	 * Handles all requests to edit a particular property.  This method should bind the Property 
+	 * to the model, and redirect to a page that displays the Edit Property page.
 	 */
 	@RequestMapping(params="edit", method=RequestMethod.POST)
 	public ModelAndView editProperty(@RequestParam("edit") String propertyToEdit) {
