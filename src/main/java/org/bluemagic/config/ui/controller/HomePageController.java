@@ -1,5 +1,6 @@
 package org.bluemagic.config.ui.controller;
 
+import org.bluemagic.config.ui.vo.Property;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,12 @@ public class HomePageController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView displayHomePage() {
+		// TODO
+		return null;
+	}
+	
+	@RequestMapping(value="/createProperty", method=RequestMethod.GET)
+	public ModelAndView createPropertyForm() {
 		// TODO
 		return null;
 	}

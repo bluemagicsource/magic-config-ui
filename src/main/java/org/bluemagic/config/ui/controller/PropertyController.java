@@ -2,7 +2,9 @@ package org.bluemagic.config.ui.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.bluemagic.config.ui.vo.Property;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,8 +78,9 @@ public class PropertyController {
 	/**
 	 * Handles all requests to create a new property.
 	 */
-	@RequestMapping(params="create", method=RequestMethod.POST)
-	public ModelAndView createPropery(HttpServletRequest request) {
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public ModelAndView createPropery(@ModelAttribute("property") Property property, 
+			                          HttpServletRequest request) {
 		// TODO
 		return null;
 	}
