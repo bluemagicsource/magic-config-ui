@@ -2,7 +2,9 @@ package org.bluemagic.config.ui.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.bluemagic.config.ui.service.PropertyService;
 import org.bluemagic.config.ui.vo.Property;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/property")
 public class PropertyController {
 
+	@Autowired
+	private PropertyService propertyService;
+	
 	/**
 	 * This method will handle all requests to view a particular property.  We
 	 * do not know how many components make up the property (length wise), so we 
@@ -47,7 +52,7 @@ public class PropertyController {
 	 */
 	@RequestMapping(value="/**", method=RequestMethod.GET)
 	public @ResponseBody String getProperty(HttpServletRequest request) {
-		// TODO
+		
 		return null;
 	}
 	
@@ -76,12 +81,21 @@ public class PropertyController {
 	}
 	
 	/**
-	 * Handles all requests to create a new property.
+	 * Handles all requests to create a new property.  Once it's finished, it should redirect the user
+	 * back to the home page.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ModelAndView createPropery(@ModelAttribute("property") Property property, 
+	public String createPropery(@ModelAttribute Property property, 
 			                          HttpServletRequest request) {
-		// TODO
+		
 		return null;
+	}
+
+	public PropertyService getPropertyService() {
+		return propertyService;
+	}
+
+	public void setPropertyService(PropertyService propertyService) {
+		this.propertyService = propertyService;
 	}
 }
