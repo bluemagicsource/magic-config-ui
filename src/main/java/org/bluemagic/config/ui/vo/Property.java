@@ -10,8 +10,25 @@ import java.util.List;
  */
 public class Property {
 
+	/**
+	 * The name of the property without the tags.
+	 */
 	private String baseName;
+	
+	/**
+	 * The property name plus it's associated tags appended on.  A convenient piece of information,
+	 * used when building URL links in the JSP's.
+	 */
+	private String fullName;
+	
+	/**
+	 * The value associated with this particular property.
+	 */
 	private String value;
+	
+	/**
+	 * The tags associated with this property.
+	 */
 	private List<PropertyTag> tags;
 	
 	public String getBaseName() {
@@ -40,5 +57,13 @@ public class Property {
 	
 	public void setTags(List<PropertyTag> tags) {
 		this.tags = tags;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 }
