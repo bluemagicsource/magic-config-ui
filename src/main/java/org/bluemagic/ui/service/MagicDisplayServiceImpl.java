@@ -9,12 +9,11 @@ import java.util.List;
 
 import org.bluemagic.config.api.property.LocatedProperty;
 import org.bluemagic.config.api.tag.SingleTag;
+import org.bluemagic.config.api.tag.Tag;
 import org.bluemagic.ui.domain.PropertyDetail;
 import org.bluemagic.ui.domain.PropertyInfo;
 import org.bluemagic.ui.domain.TagDetail;
 import org.bluemagic.ui.domain.TagInfo;
-import org.bluemagic.ui.domain.TagInfo.Obligation;
-import org.bluemagic.ui.domain.TagInfo.Visibility;
 
 public class MagicDisplayServiceImpl implements MagicDisplayService {
 
@@ -33,8 +32,6 @@ public class MagicDisplayServiceImpl implements MagicDisplayService {
 			tagInfo.setTag(new SingleTag("science"));
 			tagInfo.setColor("red");
 			tagInfo.setBackgroundColor("silver");
-			tagInfo.setObligation(Obligation.MANDATORY);
-			tagInfo.setVisibility(Visibility.PUBLIC);
 			tags = new ArrayList<TagInfo>();
 			tags.add(tagInfo);
 			info.setTags(tags);
@@ -43,11 +40,11 @@ public class MagicDisplayServiceImpl implements MagicDisplayService {
 			info = new PropertyInfo();
 			info.setProperty(new LocatedProperty(new URI("blue"), new URI("blue"), "lamp-post", this.getClass()));
 			tagInfo = new TagInfo();
-			tagInfo.setTag(new SingleTag("appliance"));
+			SingleTag tag = new SingleTag("appliance");
+			tag.setObligation(Tag.Obligation.OPTIONAL);
+			tagInfo.setTag(tag);
 			tagInfo.setColor("white");
 			tagInfo.setBackgroundColor("blue");
-			tagInfo.setObligation(Obligation.OPTIONAL);
-			tagInfo.setVisibility(Visibility.PUBLIC);
 			tags = new ArrayList<TagInfo>();
 			tags.add(tagInfo);
 			info.setTags(tags);
@@ -62,11 +59,11 @@ public class MagicDisplayServiceImpl implements MagicDisplayService {
 	public TagDetail tagDetail(String tag) {
 
 		TagDetail detail = new TagDetail();
-		detail.setTag(new SingleTag(tag));
+		SingleTag tag2 = new SingleTag(tag);
+		tag2.setObligation(Tag.Obligation.OPTIONAL);
+		detail.setTag(tag2);
 		detail.setColor("white");
 		detail.setBackgroundColor("blue");
-		detail.setObligation(Obligation.OPTIONAL);
-		detail.setVisibility(Visibility.PUBLIC);
 		detail.setOwner("@jackrod");
 		detail.setCreated(new Date());
 		detail.setOccurrences(201);
@@ -87,8 +84,6 @@ public class MagicDisplayServiceImpl implements MagicDisplayService {
 		tagInfo.setTag(new SingleTag("science"));
 		tagInfo.setColor("red");
 		tagInfo.setBackgroundColor("silver");
-		tagInfo.setObligation(Obligation.MANDATORY);
-		tagInfo.setVisibility(Visibility.PUBLIC);
 		List<TagInfo> tags = new ArrayList<TagInfo>();
 		tags.add(tagInfo);
 			

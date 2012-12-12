@@ -12,7 +12,7 @@
 	<table class="tagDetail">
 		<tr>
 			<td>Tag:</td>
-			<td><span class="bigTag <c:out value='${tagDetail.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagDetail.color}' />; background-color:<c:out value='${tagDetail.backgroundColor}' />" href="./detail?tag=<c:out value='${tagDetail.tag.toString()}' />"><c:out value="${tagDetail.tag.toString()}" /></span></td>
+			<td><span class="bigTag <c:out value='${tagDetail.tag.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagDetail.color}' />; background-color:<c:out value='${tagDetail.backgroundColor}' />" href="./detail?tag=<c:out value='${tagDetail.tag.toString()}' />"><c:out value="${tagDetail.tag.toString()}" /></span></td>
 		</tr>
 		<tr>
 			<td>Type:</td>
@@ -20,11 +20,11 @@
 		</tr>
 		<tr>
 			<td>Obligation:</td>
-			<td><c:out value='${tagDetail.obligation.toString()}' /></td>
+			<td><c:out value='${tagDetail.tag.obligation.toString()}' /></td>
 		</tr>
 		<tr>
 			<td>Visibility:</td>
-			<td><c:out value='${tagDetail.visibility.toString()}' /></td>
+			<td><c:out value='${tagDetail.tag.visibility.toString()}' /></td>
 		</tr>
 		<tr>
 			<td>Occurrences:</td>

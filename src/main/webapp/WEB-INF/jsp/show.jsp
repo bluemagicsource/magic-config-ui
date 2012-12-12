@@ -61,6 +61,7 @@
 
 	<table id="propertyTable">
 		<thead>
+			<th><input type="checkbox" /></th>	
 	        <th>Key</th>
 	        <th>Tags</th>
 	        <th>Value</th>
@@ -68,12 +69,15 @@
        	<tbody>
         <c:forEach var="propertyInfo" items="${propertyInfoList}">
 	        <tr>
+	        	<td>
+                    <input type="checkbox" />
+                </td>
 	            <td>
 	                <a class="key" href="#" onclick="property('<c:out value='${propertyInfo.property.key}' />')"><c:out value="${propertyInfo.property.key}" /></a>
 	            </td>
 	            <td>
 	                <c:forEach var="tagInfo" items="${propertyInfo.tags}">
-	                    <a class="tag <c:out value='${tagInfo.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagInfo.color}' />; background-color:<c:out value='${tagInfo.backgroundColor}' />" href="#" onclick="tag('<c:out value='${tagInfo.tag.toString()}' />')"><c:out value="${tagInfo.tag.toString()}" /></a>
+	                    <a class="tag <c:out value='${tagInfo.tag.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagInfo.color}' />; background-color:<c:out value='${tagInfo.backgroundColor}' />" href="#" onclick="tag('<c:out value='${tagInfo.tag.toString()}' />')"><c:out value="${tagInfo.tag.toString()}" /></a>
 		            </c:forEach>
        		    </td>
 				<td>

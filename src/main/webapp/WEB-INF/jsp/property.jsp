@@ -22,7 +22,7 @@
 			<td>Tags:</td>
 			<td>
 				<c:forEach var="tagInfo" items="${propertyDetail.tags}">
-					<span class="tag <c:out value='${tagInfo.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagInfo.color}' />; background-color:<c:out value='${tagInfo.backgroundColor}' />"><c:out value="${tagInfo.tag.toString()}" /></span>
+					<span class="tag <c:out value='${tagInfo.tag.obligation.toString().toLowerCase()}' />" style="color:<c:out value='${tagInfo.color}' />; background-color:<c:out value='${tagInfo.backgroundColor}' />"><c:out value="${tagInfo.tag.toString()}" /></span>
 				</c:forEach>
 			</td>
 		</tr>
